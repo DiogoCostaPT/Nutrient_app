@@ -438,6 +438,7 @@ double ProcImag(int chem, int nboxes, int deltaem, double parcal[3][3], double c
 // You should only integrate subroutine "con_c = ProcImag(nboxes, deltaem, parcal, colchar_rgb, res_rgb_c, colchar_cref)" and all the other subroutines it calls.
 int main()
 {
+    
     // Advanced Settings
     int nboxes = 7; // number of boxes in the colorchart
 
@@ -672,6 +673,7 @@ int main()
     }
 
     // Process image
+    // Kiya: the python interface should retrieve the arguments of ProcImag
     con_c_median = ProcImag(chem, nboxes, deltaem, parcal, colchar_rgb, res_rgb, colchar_cref, con_c,con_u, &errmsg);
     printf( "con_c_median = %f\n", con_c_median);
     printf("%s\n", errmsg);
