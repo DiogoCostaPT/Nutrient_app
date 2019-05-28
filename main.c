@@ -673,8 +673,9 @@ int main()
     }
 
     // Process image
-    // Kiya: the python interface should retrieve the arguments of ProcImag
+    // Riya: the python interface should retrieve the arguments of ProcImag
     // this code should replace part of the variable initiation above
+    // test if Riya can commit and post in slack
     con_c_median = ProcImag(chem, nboxes, deltaem, parcal, colchar_rgb, res_rgb, colchar_cref, con_c,con_u, &errmsg);
     printf( "con_c_median = %f\n", con_c_median);
     printf("%s\n", errmsg);
