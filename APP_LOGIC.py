@@ -3,21 +3,16 @@
         Riya Maria Kurian on May 28th, 2019 '''
 
 
-import urllib.request
 from urllib.parse import urlsplit
 from urllib import request
 import sys
+import urllib.request
 from math import *
 import json
 
-Nitrate = urllib.request.urlopen("https://gwf-nutrient.usask.ca/api/v1/samples?type=nitrate").read()
-Phosphate = urllib.request.urlopen("https://gwf-nutrient.usask.ca/api/v1/samples?type=phosphate").read()
-
-
 def download_stack(Input_URL):
     data = json.loads(Input_URL)
-    #print(data)
-
+    
     with open('data.txt', 'w') as Input_URL:
         json.dump(data, Input_URL)
 
@@ -72,9 +67,9 @@ def download_stack(Input_URL):
     Reference_measurement = data_loaded['data']['samples'][Measurement_wanted]['reference_measurements']
     print("Reference Measurement = " + str(Reference_measurement))
 
-    Temperature = data_loaded['data']['samples'][Measurement_wanted]['temperature']
+    Temperature = data_loaded['data']['samples'][Measurement_wanted]['temperature'].encode('cp1252', errors='ignore').decode('utf-8')
     print("Temperature = " + Temperature)
-
+   
 
 Test = input("Which test results you want(Nitrate or Phosphate: ")
 Nitrate = urllib.request.urlopen("https://gwf-nutrient.usask.ca/api/v1/samples?type=nitrate").read()
